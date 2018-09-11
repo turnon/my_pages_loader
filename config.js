@@ -4,14 +4,14 @@ var MyPagesLoader = {
         this.cfg = cfg
         var that = this
 
-        var script = document.createElement("SCRIPT");
-        script.src = 'https://raw.githubusercontent.com/turnon/my_pages_loader/master/start.js';
-        script.type = 'text/javascript';
-        script.onload = function () {
+        $.get('https://raw.githubusercontent.com/turnon/my_pages_loader/master/start.js', function (code) {
+            var script = document.createElement("SCRIPT");
+            script.innerText = code;
+            script.type = 'text/javascript';
+            document.getElementsByTagName("head")[0].appendChild(script);
+
             that.button_all = this.cfg.button($)
             that.button_all.click(this.start).css('cursor', 'pointer')
-        };
-
-        document.getElementsByTagName("head")[0].appendChild(script);
+        })
     }
 }

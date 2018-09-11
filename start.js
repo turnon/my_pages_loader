@@ -1,5 +1,5 @@
 MyPagesLoader.start = function () {
-    var page_count = this.cfg.page_count($)
+    var page_count = this.cfg.page_count($);
 
     var page_loaders = [];
     for (var i = 2; i <= page_count; i++) {
@@ -11,10 +11,10 @@ MyPagesLoader.start = function () {
 
     (async function () {
         for (var loader of page_loaders) {
-            var data = await loader
-            this.cfg.append_page(data, $)
+            var data = await loader;
+            this.cfg.append_page(data, $);
         }
     })()
 
-    this.button_all.remove()
-}
+    this.button_all.remove();
+};
