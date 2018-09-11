@@ -5,13 +5,10 @@ var MyPagesLoader = {
         var that = this
 
         $.get('https://raw.githubusercontent.com/turnon/my_pages_loader/master/start.js', function (code) {
-            var script = document.createElement("SCRIPT");
-            script.innerText = code;
-            script.type = 'text/javascript';
-            document.getElementsByTagName("head")[0].appendChild(script);
+            eval(code);
 
-            that.button_all = this.cfg.button($)
-            that.button_all.click(this.start).css('cursor', 'pointer')
+            that.button_all = that.cfg.button($)
+            that.button_all.click(that.start).css('cursor', 'pointer')
         })
     }
 }
