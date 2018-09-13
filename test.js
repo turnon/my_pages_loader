@@ -5,7 +5,7 @@
 // @name         test_ateles
 // @namespace    https://github.com/turnon/test_ateles
 // @version      0.0.1
-// @description  test_ateles
+// @description  test ateles
 // @author       block24block@gmail.com
 // @match       *://movie.douban.com/*/photos*
 // @grant        none
